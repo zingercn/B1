@@ -1,0 +1,236 @@
+<div class="container">
+    <h2 class="title">python与js语法对比</h2>
+    <p>python被誉为写起来最丝滑的编程语言，这里找了一个同样是弱类型的语言js，进行一下简单的对比。</p>
+    <h4>变量声明</h4>
+    <p>python</p>
+    <pre>
+        name = 'jack'
+    </pre>
+    <p>js</p>
+    <pre>
+        let name = 'jack'
+        // 常量，不能重新赋值
+        const CONST_DATA = 1
+    </pre>
+    <h4>基本数据类型</h4>
+    <p>python</p>
+    <pre>
+        # number int型
+        num_int = int(2.3)
+
+        # string
+        str1 = 'python'
+        print(str1[0]) # 输出结果为p
+
+        # list
+        list1 = [1,'a',[1],2]
+        list1.append(3)
+        print(list1) # 输出结果为[1,'a',[1],2,3]
+
+        # tuple （不可变）
+        tup1 = (1,2,3)
+        tup2 = ('a',) # 单元组尾部需要添加逗号
+        tup3 = tup1+tup2 # 可以使用+进行元组更新
+
+        # dictionary
+        dict1 = {'fruit':3,'people':4,'animal':5}
+        dict1['fruit'] = 10 # 更新 fruit
+        del dict1['animal'] # 删除 animal
+
+        # set
+        set1 = {1,2,3,3,4}
+        print(set1) # 输出{1, 2, 3, 4}
+
+        # bool
+        is_run = True
+    </pre>
+    <p>js</p>
+    <pre>
+        // number
+        let age = 18
+
+        // string
+        let str1 = 'my age is '
+        console.log(str1+18) //结果为 'my age is 18'
+
+        // boolean
+        is_ok = true
+
+        // array
+        arr1 = [1,'a',[1],2]
+
+        // object
+        person = {name:'jack', age:18}
+
+        // set
+        let set1 = new Set()
+        set1.add(1)
+        set1.add(5)
+        set1.add(5)
+        console.log(set1) // Set(2) {1,5}
+    </pre>
+    <p>基本数据类型python与js大部分类似，小部分细节需要做一些区分，例如python不能直接将字符串和数字连接，需要使用str()转换。</p>
+    <h4>运算符</h4>
+    <p>该部分两者几乎没有任何差别，在逻辑运算符部分python使用的是单词 and or not 而js使用的是符号 && || ! ，对于没有编程基础的python更加友好一些。</p>
+    <h4>条件与循环</h4>
+    <p>python</p>
+    <pre>
+        # if
+        age1 = 18
+        age2 = 20
+        if age1 > age2 :
+            print(age1)
+        elif age1 == age2:
+            print('好巧啊，我们同年哎')
+        else:
+            print(age2)
+        
+        # for
+        fruits = ['apple','banana','orange']
+        for i in fruits:
+            print(i)
+        for i in range(5):
+            print(i)
+    </pre>
+    <p>js</p>
+    <pre>
+        // if
+        if (条件1) {
+            条件1 为 true 时执行
+        } else if (条件2) {
+            条件1 为 false 且条件2 为 true 时执行
+         } else {
+            条件1 和条件2 同时为 false 时执行
+        }
+
+        // for
+        let fruits = ['apple','banana','orange']
+        for (let x of fruits) {
+            console.log(x)
+        }
+        for (let i = 0; i < 5; i++) { 
+            console.log(i)
+        }
+    </pre>
+    <p>条件与循环部分，两者区别还是比较大的，python比js要简洁一些，主要体现在分号、花括号、大括号以及变量声明上面，但前者一定要注意缩进。</p>
+    <h4>函数</h4>
+    <p>python</p>
+    <pre>
+        def max(a,b):
+            if a>b:
+                return a
+            else:
+                return b
+        print(max(1,2))
+        def passfunc():
+            pass # 占坑符
+    </pre>
+    <p>js</p>
+    <pre>
+        function max(a,b){
+            if(a>b){
+                return a
+            }else{
+                return b
+            }
+        }
+        console.log(max(1,2))
+    </pre>
+    <p>python使用 def 定义函数，js使用function，个人觉得js定义函数的方式更易于理解一些。</p>
+    <h4>类</h4>
+    <p>python</p>
+    <pre>
+        class Person:
+        # 构造函数
+        def __init__(self,name,age):
+            self.name = name
+            self.age = age
+        # 普通函数
+        def speak(self):
+            return '我的名字是'+self.name+' 今年'+str(self.age)+'岁'
+        
+        p1 = Person('jack',18)
+        print(p1.speak())
+
+        # 从Person类继承
+        class Student(Person):
+            def __init__(self, name, age, school, sex='man'):
+                # 父类构造函数，使用super()调用时，不用添加self参数
+                super().__init__(name, age)
+                self.school = school
+                # 私有变量，对象实例无法直接访问
+                self.__sex = sex       
+            # override重写speak函数
+            def speak(self):
+                # 父类speak函数，使用名称调用时，需要添加self参数
+                # 或者super().speak()
+                return Person.speak(self) +' 就读于'+self.school
+            def get_sex(self):
+                return self.__sex
+
+        s1 = Student('paul',20,'MIT')
+        print(s1.speak(),'性别'+s1.get_sex())
+    </pre>
+    <p>js</p>
+    <pre>
+        class Person{
+            constructor(name,age){
+                this.name = name
+                this.__age = age
+            }
+            get_age(){
+                return this.__age
+            }
+        }
+        class Student extends Person{
+            constructor(name,age,school){
+                super(name,age)
+                this.__school = school
+            }
+            get_school(){
+                return this.__school
+            }
+        }
+
+        p1 = new Person('jack',18)
+        console.log(p1.name+'今年'+p1.get_age()+'岁')
+        s1 = new Student('paul',20,'MIT')
+        console.log(s1.name+'就读于'+s1.get_school())
+    </pre>
+    <p>类语法方面，python和js差别不大，也就在构造函数名和父类调用上有细微的差别，python的括号继承大法确实令人耳目一新，但实际使用时不如extends一目了然，毕竟js的class是2015年才有的，考虑的肯定更全面一些，要知道js之前类的写法简直不忍直视。</p>
+    <h4>模块</h4>
+    <p>python</p>
+    <pre>
+        import 文件名
+        文件名.f()
+
+        from 文件名 import f
+        f()
+    </pre>
+    <p>js</p>
+    <pre>
+        // 文件名f.js
+        function f1(){
+
+        }
+        arr = []
+        export {f1, arr}
+
+        // 调用
+        import {f1, arr} from 'f.js'
+        f1()
+        console.log(arr)
+    </pre>
+    <p>模块方面，js多一个导出的环节</p>
+    <p>整体而言，js相对于其他主流语言来说，已经算比较简洁了，但和python一对比，还是有很多可以优化的地方，但碍于js沉重的历史包袱，尤其是万物皆可function的prototype部分。虽然语法只是语言最表面的东西，但如同衣着一样，当你与一位衣衫褴褛的人交流时，即使他再有内涵，恐怕第一印象也不会太好。</p>
+</div>
+<style>
+    pre{
+        background-color: #f8f9fa;
+        border-radius: 5px;
+        padding-top: 1rem;
+    }
+</style>
+<script type="module">
+    document.title='python与js语法对比'
+</script>

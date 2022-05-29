@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block title %}地球{% endblock %}
+{% block navbar_title %}
+    <a href="/earth" class="navbar-link bi bi-pen"></a>
+{% endblock %}
+
+{% block main %}
+<div class="earth-content">
+    {{content|safe}}
+</div>
+{% endblock %}

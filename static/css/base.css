@@ -1,0 +1,82 @@
+/* 导航 */
+.navbar .title{
+    position: absolute;
+    width: 48px;
+    left: 50%;
+    margin-left: -24px;
+    text-align: center;
+    z-index: 1;
+}
+.navbar .title .bi{
+    color:rgba(255,255,255,.55)
+}
+.navbar .offcanvas-header .bi{
+    color:rgba(255,255,255,.55)
+}
+.navbar .nav-link .bi{
+    color:rgba(255,255,255,.55)
+}
+
+/* main */
+.main{
+    padding-top: 65px;
+}
+
+/* 页脚 */
+.footer{
+    text-align: center;
+    padding: 20px;
+}
+
+/* 首页 */
+.index .bg{
+    background: url('/static/images/bg.jpg');
+    background-position: center;
+    background-size: cover;
+    position: fixed;
+    z-index: -999;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+/* 地球 */
+.earth .list-item{
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+.earth .list-item a{
+    text-decoration: none;
+    color: var(--bs-body-color);
+}
+.earth .list-item a:hover{
+    color: #0a58ca;
+}
+
+/* 加载 */
+.earth .load{
+    text-align: center;
+    font-size: 30px;
+}
+.earth .load .item{
+    cursor: pointer;
+}
+.earth .load .item:hover{
+    color: #0a58ca;
+}
+.earth .load .item.disabled{
+    color: darkgray;
+    cursor: default;
+}
+
+/* 地球内容 */
+.earth-content .title{
+    text-align: center;
+}
+.earth-content .video{
+    max-width: 100%; 
+    width:800px; 
+    display:block; 
+    margin:0 auto;
+}

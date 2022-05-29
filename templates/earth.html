@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block title %}地球{% endblock %}
+
+{% block navbar_title %}
+<a href="/earth" class="bi bi-pen"></a>
+{% endblock %}
+
+{% block main %}
+<div class="earth">
+    <div class="container">
+        <div id="list" class="row row-cols-1 row-cols-md-3"></div>
+        <!-- 加载数据 -->
+        <div class="load">
+            <span id="prev" class="item">
+                <i class="bi bi-arrow-left-short"></i>
+            </span>
+            <span id="next" class="item">
+                <i class="bi bi-arrow-right-short"></i>
+            </span>
+        </div>
+    </div>
+</div>
+<script type="module" src="/static/js/earth.js"></script>
+{% endblock %}

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {% block head %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="/static/images/favicon.png" size="32x32">
+    <link rel="stylesheet" href="/static/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/bootstrap/icons/bootstrap-icons.css">
+    <link rel="stylesheet" href="/static/css/base.css">
+    <script src="/static/bootstrap/js/bootstrap.min.js"></script>
+    <title>{% block title %}{% endblock %}</title>
+    {% endblock %}
+</head>
+<body>
+    <header class="header">
+        {%block navbar%}
+        <nav class="navbar navbar-dark bg-dark fixed-top">
+            <div class="container-fluid">
+                <span style="cursor: pointer;" class="navbar-toggler" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+                    <span class="navbar-toggler-icon"></span>
+                </span>
+                <span class="title">
+                    {% block navbar_title%}{% endblock %}
+                </span>
+                <div class="offcanvas offcanvas-start bg-dark" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+                    <div class="offcanvas-header">
+                        <button class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                            <li class="nav-item">
+                                <a class="nav-link" href="/">
+                                    <i class="bi bi-house"></i>&nbsp;年华易逝 迷途知返
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/earth">
+                                    <i class="bi bi-pen"></i>&nbsp;笔墨话春秋 岁月数风流
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/mars">
+                                    <i class="bi bi-hourglass-split"></i>&nbsp;wait a minute
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        {%endblock%}
+    </header>
+    <div class="main">
+        {% block main %}{% endblock %}
+    </div>
+    <footer class="footer">
+        {% block footer %}
+        Copyright &copy; 2022
+        {% endblock %}
+    </footer>
+</body>
+</html>

@@ -30,17 +30,17 @@ class g_easy_music{
     }
     init(){
         this.__create(this.__music_src)
-        document.querySelector('#g-easy-music-play').addEventListener('click',function(e){
-            this.style.display='none'
+        document.querySelector('#g-easy-music-play').addEventListener('click',(e)=>{
+            document.querySelector('#g-easy-music-play').style.display='none'
             document.querySelector('#g-easy-music-pause').style.display='inline-block'
             document.querySelector('#g-easy-music-audio').play()
         })
-        document.querySelector('#g-easy-music-pause').addEventListener('click',function(e){
-            this.style.display='none'
+        document.querySelector('#g-easy-music-pause').addEventListener('click',(e)=>{
+            document.querySelector('#g-easy-music-pause').style.display='none'
             document.querySelector('#g-easy-music-play').style.display='inline-block'
             document.querySelector('#g-easy-music-audio').pause()
         })
-        document.querySelector('#g-easy-music-audio').addEventListener('ended',function(e){
+        document.querySelector('#g-easy-music-audio').addEventListener('ended',(e)=>{
             document.querySelector('#g-easy-music-play').style.display='inline-block'
             document.querySelector('#g-easy-music-pause').style.display='none'
         })

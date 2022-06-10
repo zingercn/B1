@@ -33,12 +33,12 @@ class Earth{
         document.querySelector('#list').innerHTML = html
         this.loadstyle()
         // prev
-        document.querySelector('#prev').addEventListener('click',function(e){
-            earth.prev()
+        document.querySelector('#prev').addEventListener('click',(e)=>{
+            this.prev()
         })
         // next
-        document.querySelector('#next').addEventListener('click',function(e){
-            earth.next()
+        document.querySelector('#next').addEventListener('click',(e)=>{
+            this.next()
         })
     }
     loadstyle(){

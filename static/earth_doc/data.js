@@ -20,6 +20,7 @@ const DATA = [
     {'foldername':'2022-5-30','img':'card.jpg','title':'站在用户的角度看微软'},
     {'foldername':'2022-6-1','img':'card.jpg','title':'python与js语法对比'},
     {'foldername':'2022-6-4','img':'card.jpg','title':'双减之下的学生和教师该何去何从'},
+    {'foldername':'2022-6-27','img':'card.jpg','title':'克隆与交流'},
 ]
 // 倒序
 DATA.reverse()

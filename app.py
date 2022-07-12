@@ -16,13 +16,13 @@ def earth():
     return render_template('earth.html')
 
 # 地球内容页面
-@app.route('/earth_content/<string:foldername>')
+@app.route('/earthcontent/<string:foldername>')
 def earth_content(foldername=None):
     content = ''
-    with open('static/earth_doc/'+foldername+'/index.html', 'r', encoding='utf-8') as f:
+    with open('static/earth-doc/'+foldername+'/index.html', 'r', encoding='utf-8') as f:
         content = f.read()
     # print(content)
-    return render_template('earth_content.html', content=content)
+    return render_template('earthcontent.html', content=content)
 
 # 火星
 @app.route('/mars')

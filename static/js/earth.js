@@ -1,16 +1,16 @@
-import {DATA, get_tmp} from '/static/earth_doc/data.js'
+import {DATA, getTmp} from '/static/earth-doc/data.js'
 
 class Earth{
     // 数据
-    __data = []
+    _data = []
     // 当前页
-    __cur = 1 
+    _cur = 1 
     constructor(data=[]){
         // 数据分组，每页6个
-        this.__data = this.group_data(data, 6)
+        this._data = this.groupData(data, 6)
     }
     // 将数组data按每组num个进行分组
-    group_data(data, num){
+    groupData(data, num){
         const list = []
         let current = []
         for (const item of data) {
@@ -27,11 +27,11 @@ class Earth{
     }
     init(){
         let html = ''
-        for (const item of this.__data[this.__cur-1]) {
-            html+= get_tmp(item)
+        for (const item of this._data[this._cur-1]) {
+            html+= getTmp(item)
         }
         document.querySelector('#list').innerHTML = html
-        this.loadstyle()
+        this.loadStyle()
         // prev
         document.querySelector('#prev').addEventListener('click',(e)=>{
             this.prev()
@@ -41,38 +41,38 @@ class Earth{
             this.next()
         })
     }
-    loadstyle(){
-        if(this.__cur==1){
+    loadStyle(){
+        if(this._cur==1){
             document.querySelector('#prev').classList.add('disabled')
         }else{
             document.querySelector('#prev').classList.remove('disabled')
         }
-        if(this.__cur==this.__data.length){
+        if(this._cur==this._data.length){
             document.querySelector('#next').classList.add('disabled')
         }else{
             document.querySelector('#next').classList.remove('disabled')
         }
     }
     prev(){
-        if(this.__cur>1){
+        if(this._cur>1){
             let html = ''
-            this.__cur -= 1
-            for (const item of this.__data[this.__cur-1]) {
-                html+= get_tmp(item)
+            this._cur -= 1
+            for (const item of this._data[this._cur-1]) {
+                html+= getTmp(item)
             }
             document.querySelector('#list').innerHTML = html
-            this.loadstyle()
+            this.loadStyle()
         }
     }
     next(){
-        if(this.__cur<this.__data.length){
+        if(this._cur<this._data.length){
             let html = ''
-            this.__cur += 1
-            for (const item of this.__data[this.__cur-1]) {
-                html+= get_tmp(item)
+            this._cur += 1
+            for (const item of this._data[this._cur-1]) {
+                html+= getTmp(item)
             }
             document.querySelector('#list').innerHTML = html
-            this.loadstyle()
+            this.loadStyle()
         }
     }
 }

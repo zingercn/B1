@@ -1,9 +1,9 @@
-class g_easy_music{
-    __music_src = null
-    constructor(music_src){
-        this.__music_src = music_src
+class GEasyMusic{
+    _musicSrc = null
+    constructor(musicSrc){
+        this._musicSrc = musicSrc
     }
-    __create(music_src){
+    _create(musicSrc){
         const tmp = `
             <span id="g-easy-music-play">
                 <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" viewBox="0 0 16 16">
@@ -17,7 +17,7 @@ class g_easy_music{
                     <path d="M5 6.25a1.25 1.25 0 1 1 2.5 0v3.5a1.25 1.25 0 1 1-2.5 0v-3.5zm3.5 0a1.25 1.25 0 1 1 2.5 0v3.5a1.25 1.25 0 1 1-2.5 0v-3.5z"/>
                 </svg>
             </span>
-            <audio id="g-easy-music-audio" src=${music_src}></audio>
+            <audio id="g-easy-music-audio" src=${musicSrc}></audio>
             `
         const div = document.createElement('div')
             div.setAttribute('id','g-easy-music')
@@ -29,7 +29,7 @@ class g_easy_music{
         document.body.appendChild(div)
     }
     init(){
-        this.__create(this.__music_src)
+        this._create(this._musicSrc)
         document.querySelector('#g-easy-music-play').addEventListener('click',(e)=>{
             document.querySelector('#g-easy-music-play').style.display='none'
             document.querySelector('#g-easy-music-pause').style.display='inline-block'
@@ -47,4 +47,4 @@ class g_easy_music{
     }
 }
 
-export {g_easy_music}
+export {GEasyMusic}

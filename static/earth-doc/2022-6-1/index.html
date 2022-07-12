@@ -176,26 +176,26 @@
         class Person{
             constructor(name,age){
                 this.name = name
-                this.__age = age
+                this._age = age
             }
-            get_age(){
-                return this.__age
+            getAge(){
+                return this._age
             }
         }
         class Student extends Person{
             constructor(name,age,school){
                 super(name,age)
-                this.__school = school
+                this._school = school
             }
-            get_school(){
-                return this.__school
+            getSchool(){
+                return this._school
             }
         }
 
         p1 = new Person('jack',18)
-        console.log(p1.name+'今年'+p1.get_age()+'岁')
+        console.log(p1.name+'今年'+p1.getAge()+'岁')
         s1 = new Student('paul',20,'MIT')
-        console.log(s1.name+'就读于'+s1.get_school())
+        console.log(s1.name+'就读于'+s1.getSchool())
     </pre>
     <p>类语法方面，python和js差别不大，也就在构造函数名和父类调用上有细微的差别，python的括号继承大法确实令人耳目一新，但实际使用时不如extends一目了然，毕竟js的class是2015年才有的，考虑的肯定更全面一些，要知道js之前类的写法简直不忍直视。</p>
     <h4>模块</h4>

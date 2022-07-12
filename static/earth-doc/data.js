@@ -1,10 +1,10 @@
 // 列表模板
-function get_tmp(data){
+function getTmp(data){
     const tmp =
         `<div class="col list-item">
-            <a href="/earth_content/${data.foldername}">
+            <a href="/earthcontent/${data.foldername}">
                 <div class="card h-100">
-                    <img src="/static/earth_doc/${data.foldername}/${data.img}" class="card-img-top" alt="">
+                    <img src="/static/earth-doc/${data.foldername}/${data.img}" class="card-img-top" alt="">
                     <div class="card-body">
                         <h5 class="card-title">${data.title}</h5>
                     </div>
@@ -25,4 +25,4 @@ const DATA = [
 ]
 // 倒序
 DATA.reverse()
-export {DATA, get_tmp}
+export {DATA, getTmp}

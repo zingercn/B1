@@ -22,6 +22,7 @@ const DATA = [
     {'foldername':'2022-6-4','img':'card.jpg','title':'双减之下的学生和教师该何去何从'},
     {'foldername':'2022-6-27','img':'card.jpg','title':'克隆与交流'},
     {'foldername':'2022-7-3','img':'card.jpg','title':'论经验之利弊'},
+    {'foldername':'2022-7-14','img':'card.jpg','title':'前端八股题集'},
 ]
 // 倒序
 DATA.reverse()
